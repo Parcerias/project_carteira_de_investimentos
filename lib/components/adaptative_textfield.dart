@@ -32,6 +32,17 @@ class AdaptativeTextField extends StatelessWidget {
                 onSubmitted: onSubmitted,
                 placeholder: labelTitulo,
               ),
+              CupertinoTextField(
+                controller: valueController,
+                keyboardType: TextInputType.numberWithOptions(decimal: true),
+                onSubmitted: onSubmitted,
+                placeholder: labelValue,
+              ),
+              CupertinoTextField(
+                controller: brokerController,
+                onSubmitted: onSubmitted,
+                placeholder: labelBroker,
+              ),
             ],
           )
         : Column(
