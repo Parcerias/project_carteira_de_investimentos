@@ -151,7 +151,7 @@ class _TransactionFormState extends State<TransactionForm> {
                     label: 'Salvar Transação',
                     onPressed: _submitForm,
                   ),
-                  /* RaisedButton(
+                  /*RaisedButton(
                     textColor: Theme.of(context).primaryColor,
                     child: Text('Salvar Transação'),
                     onPressed: _submitForm,
