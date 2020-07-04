@@ -96,29 +96,6 @@ class _TransactionFormState extends State<TransactionForm> {
                 brokerController: _brokerController,
               ),
 
-              // TextField(
-              // controller:  _titleController, // Pegando o valor digitado
-              //onSubmitted: (_) =>
-              // _submitForm(), // Gravar atravez da opção do teclado
-              //decoration: InputDecoration(
-              // labelText: 'Título do Investimento',
-              // ),
-              // ),
-              /*  TextField(
-                controller: _valueController,
-                keyboardType: TextInputType.numberWithOptions(decimal: true),
-                onSubmitted: (_) => _submitForm(),
-                decoration: InputDecoration(
-                  labelText: 'Valor (R\$)',
-                ),
-              ),
-              TextField(
-                controller: _brokerController,
-                onSubmitted: (_) => _submitForm(),
-                decoration: InputDecoration(
-                  labelText: 'Corretora',
-                ),
-              ), */
               Container(
                 height: 70,
                 child: Row(
