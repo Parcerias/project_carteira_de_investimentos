@@ -1,6 +1,6 @@
 import 'package:expenses/components/adaptative_textfield.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
+import 'adaptative_date_picker.dart';
 import 'adaptative_button.dart';
 
 class TransactionForm extends StatefulWidget {
@@ -55,24 +55,6 @@ class _TransactionFormState extends State<TransactionForm> {
     widget.onSubmit(title, value, _selectedDate, broker);
   }
 
-  _showDataPicker() {
-    showDatePicker(
-      context: context,
-      initialDate: DateTime.now(),
-      firstDate: DateTime(2020),
-      lastDate: DateTime.now(),
-    ).then((pickedDate) {
-      if (pickedDate == null) {
-        return;
-      }
-
-      // Alterar status
-      setState(() {
-        _selectedDate = pickedDate;
-      });
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -95,31 +77,13 @@ class _TransactionFormState extends State<TransactionForm> {
                 labelBroker: 'Corretora',
                 brokerController: _brokerController,
               ),
-
-              Container(
-                height: 70,
-                child: Row(
-                  children: <Widget>[
-                    Expanded(
-                      child: Text(
-                        _selectedDate == null
-                            ? 'Nenhuma data selecionada!'
-                            : 'Data Selecionada: ${DateFormat('dd/MM/y').format(_selectedDate)}',
-                      ),
-                    ),
-                    FlatButton(
-                      color: Colors.blueGrey[50],
-                      textColor: Colors.orangeAccent[400],
-                      child: Text(
-                        'Selecionar Data',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      onPressed: _showDataPicker,
-                    ),
-                  ],
-                ),
+              AdaptativeDatePicker(
+                onDateChanged: (newDate) {
+                  setState(() {
+                    _selectedDate = newDate;
+                  });
+                },
+                selectedDate: _selectedDate,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,

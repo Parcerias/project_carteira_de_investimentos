@@ -5,9 +5,10 @@ import 'package:flutter/material.dart';
 import 'dart:io';
 
 class AdaptativeTextField extends StatelessWidget {
-  var titleController = TextEditingController();
-  var valueController = TextEditingController();
-  var brokerController = TextEditingController();
+  //var titleController = TextEditingController();
+  final TextEditingController titleController;
+  final TextEditingController valueController;
+  final TextEditingController brokerController;
   final Function onSubmitted;
   final String labelTitulo;
   final String labelValue;
